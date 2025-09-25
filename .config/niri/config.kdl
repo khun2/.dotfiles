@@ -37,15 +37,11 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
+
 
 // Settings that influence how windows are positioned and sized.
-// Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    // Set gaps around windows in logical pixels.
     gaps 16
 
     // When to center a column when changing focus, options are:
@@ -200,6 +196,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "wlsunset"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "swaync"
 
 prefer-no-csd // disable program decorations
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -527,3 +524,14 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+// Enviroment Variables
+
+environment {
+        DISPLAY ":1"
+        ELECTRON_OZONE_PLATFORM_HINT "auto"
+        QT_QPA_PLATFORM "wayland"
+        QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+        XDG_SESSION_TYPE "wayland"
+        XDG_CURRENT_DESKTOP "niri"
+    }
