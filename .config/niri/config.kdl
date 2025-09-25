@@ -23,10 +23,8 @@ input {
         // drag false
         // drag-lock
         natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
         // scroll-method "two-finger"
-        // disabled-on-external-mouse
+        disabled-on-external-mouse
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
@@ -34,7 +32,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="20%"
 }
 
 
@@ -528,10 +526,23 @@ binds {
 // Enviroment Variables
 
 environment {
-        DISPLAY ":1"
-        ELECTRON_OZONE_PLATFORM_HINT "auto"
-        QT_QPA_PLATFORM "wayland"
-        QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-        XDG_SESSION_TYPE "wayland"
-        XDG_CURRENT_DESKTOP "niri"
-    }
+  DISPLAY ":1"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+  QT_QPA_PLATFORM "wayland"
+  XDG_SESSION_TYPE "wayland"
+  XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORMTHEME "qt5ct"
+  QT_QPA_PLATFORMTHEME "qt6ct"
+  MOZ_ENABLE_WAYLAND "1"
+  LIBVA_DRIVER_NAME "nvidia"
+  GLX_VENDOR_LIBRARY_NAME "nvidia"
+  NVD_BACKEND "direct"
+  GBM_BACKEND "nvidia-drm"
+  GL_GSYNC_ALLOWED "1"
+  NV_PRIME_RENDER_OFFLOAD "1"
+  VK_LAYER_NV_optimus "NVIDIA_only"
+  WLR_DRM_NO_ATOMIC "1"
+  MOZ_DISABLE_RDD_SANDBOX "1"
+  EGL_PLATFORM "wayland"
+}
